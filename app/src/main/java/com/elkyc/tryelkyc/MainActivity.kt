@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity() {
                 clientKey = "<PUT CLIENT KEY HERE>"
                 appKey = "<PUT APP KEY HERE>"
                 workplace = WorkplaceConfig(
-                    host = "https://dp-api-test.piraeusbank.ua",
+                    host = "<PUT WORKPLACE HOST HERE>",
                     authPath = null,
                     mainPath = "/external/sdk/customer-identity",
                     encryptData = false,
