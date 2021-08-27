@@ -145,8 +145,8 @@ class MainActivity : AppCompatActivity() {
 
             val config = elkycConfig {
                 customFlow = steps
-                clientKey = "PV4RQG7-0TT4SHR-H6RYQNS-3E2PT87"
-                appKey = "83FFCT5-DZ54WV0-PGFM4BY-NQ5RMHK"
+                clientKey = "<PUT CLIENT KEY HERE>"
+                appKey = "<PUT APP KEY HERE>"
                 workplace = WorkplaceConfig(
                     host = "https://dp-api-test.piraeusbank.ua",
                     authPath = null,
@@ -158,24 +158,9 @@ class MainActivity : AppCompatActivity() {
                 )
             }
 
-            val c = elkycConfig {
-                customFlow = steps
-                clientKey = "PV4RQG7-0TT4SHR-H6RYQNS-3E2PT87"
-                appKey = "83FFCT5-DZ54WV0-PGFM4BY-NQ5RMHK"
-                workplace = WorkplaceConfig(
-                    host = "https://dev-billing.elkyc.com",
-                    authPath = "/api/sdk/auth/signIn",
-                    mainPath = "/api/sdk/workplace/verification",
-                    encryptData = false,
-                    rssigSalt = "JDslkj[pqCR@#()R*_){DAsldkhfsoguw[fo[lafL3R][[O#*^\$DKFDFScvs",
-                    accessToken = null,
-                    clientSession = "hello-session"
-                )
-            }
-
             Elkyc.startVerification(
                 activity = this,
-                config = c,
+                config = config,
                 requestCode = "RESULT_REQUEST_CODE",
                 resultLauncher = resultLauncher,
                 printLog = true,
