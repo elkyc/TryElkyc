@@ -43,8 +43,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
-    implementation "com.elkyc:core:0.0.50"
-    implementation "com.elkyc:face:0.0.6"
-    implementation "com.elkyc:documents:0.0.10"
-    implementation "com.elkyc:diia:0.0.6"
+    implementation "com.elkyc:core:0.0.53"
+    implementation "com.elkyc:face:0.0.8"
+    implementation "com.elkyc:documents:0.0.13"
+    implementation "com.elkyc:diia:0.0.9"
+
+//    implementation "io.insert-koin:koin-android:3.1.2"
 }
