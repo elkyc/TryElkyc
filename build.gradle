@@ -18,7 +18,7 @@ allprojects {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' }
-        maven { url "http://52.57.40.184:8081/repository/maven-releases/" }
+        maven { url "https://nexus.elkyc.com/repository/maven-releases/" }
     }
 }
 
