@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import com.elkyc.base.data.auth.WorkplaceConfig
+import com.elkyc.base.presentation.BaseFragment
+import com.elkyc.base.tools.Looog
 import com.elkyc.core.Elkyc
 import com.elkyc.core.elkycConfig
 import com.elkyc.core.presentation.confirm.CriteriaModel
@@ -23,8 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if (it.resultCode == Activity.RESULT_OK) {
-                Log.e("RESULT", it.data?.getStringExtra("RESULT_REQUEST_CODE") ?: "nothing")
+            Looog.w("RESULT").invoke("$it")
+            when (it.resultCode) {
+                Activity.RESULT_OK -> Log.i("RESULT", "FINISHED SUCCESSFULLY")
+                Activity.RESULT_CANCELED -> {
+                    Log.e("RESULT", it.data?.getStringExtra(BaseFragment.EXTRA_ERROR_RESULT) ?: "ERROR without message")
+                }
             }
         }
 
@@ -161,10 +167,8 @@ class MainActivity : AppCompatActivity() {
             Elkyc.startVerification(
                 activity = this,
                 config = config,
-                requestCode = "RESULT_REQUEST_CODE",
                 resultLauncher = resultLauncher,
-                printLog = true,
-                isDebug = BuildConfig.DEBUG
+                printLog = true
             )
 
         }
