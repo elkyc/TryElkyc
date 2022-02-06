@@ -168,6 +168,9 @@ class MainActivity : AppCompatActivity() {
                 activity = this,
                 config = config,
                 resultLauncher = resultLauncher,
+                callback = {
+                    Log.i("RESULT", "Document type: ${it.docData?.types?.firstOrNull()?.name}")
+                },
                 printLog = true
             )
 
